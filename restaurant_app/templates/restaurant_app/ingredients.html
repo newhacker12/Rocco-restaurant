@@ -1,0 +1,25 @@
+{% extends "restaurant_app/base.html" %}
+{% block title %} View the inventory of ingredients {% endblock %}
+
+{% block content %}
+
+<div class="row">
+    {% for ingredient in ingredients %}
+    <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card" style="width: 18rem;" border-color="black">
+            <div class="card-body">
+                <h5 class="card-title"> {{ingredient.ingredient_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"> Quantity: {{ingredient.ingredient_quantity}} {{ingredient.unit}}  </p>
+                <p class="card-text"> Price per unit: ${{ingredient.price_per_unit}} </p>
+                <a href="/recipereq/view" class="card-link"> View Recipe </a>
+                <a href="/purchase/add" class="card-link">Add to Purchased </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "restaurant_app/base.html" %}
+{% block title %} View the menu {% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        {% for item in menu %}
+            <div class="col-md-4 col-sm-6 col-lg-3">
+                <div class="card" style="width: 20rem;" border-color="black">
+                    <div class="card-body">
+                        <h5 class="card-title" class="centre"> {{item.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"></h6>
+                        <p class="card-text"> Price: ${{item.price}} </p>
+                        <a href="/purchase/add" class="card-link">Add to Purchase </a>
+                        <a href="/recipereq/create" class="card-link">Add Recipe req</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+{% endblock %}
+
+
+

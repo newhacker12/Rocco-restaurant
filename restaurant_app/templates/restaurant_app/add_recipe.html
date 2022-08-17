@@ -1,0 +1,21 @@
+{% extends "restaurant_app/base.html" %}
+{% block title %} Add a menu item {% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <h5 class="card-header"> Add an item to the menu </h5>
+    <div class="card-body">
+        <form  method="post">
+        {{ form.as_p }}
+
+        {% csrf_token %}
+            <div class="submit-button">
+            <input type="submit" value="Submit"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
